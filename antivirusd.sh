@@ -11,12 +11,16 @@ secs="$3"
 if [ ! -f directory-info.last ]
 then
 echo "first run"
-ls -l testdir > directory-info.last
+ls -l "$src" > directory-info.last
 fi
 
 while true
 do 
 sleep "$secs"
 ls -l "$src" > directory-info.new
+if ! cmp -s directory-info.last directory-info.new 
+then 
+
+fi
 done
 
