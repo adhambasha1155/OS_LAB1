@@ -13,3 +13,10 @@ then
 echo "first run"
 ls -l testdir > directory-info.last
 fi
+
+while true
+do 
+sleep "$secs"
+ls -l "$src" > directory-info.new
+done
+
